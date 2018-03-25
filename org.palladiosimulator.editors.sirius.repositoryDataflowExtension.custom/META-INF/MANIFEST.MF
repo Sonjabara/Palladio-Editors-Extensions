@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Repository Dataflow Diagram Editor - Custom
+Bundle-SymbolicName: org.palladiosimulator.editors.sirius.repositoryDataflowExtension.custom;singleton:=true
+Bundle-Version: 4.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.palladiosimulator.pcm;bundle-version="4.1.0",
+ org.eclipse.sirius;bundle-version="5.1.0",
+ org.eclipse.swt;bundle-version="3.106.2",
+ org.eclipse.ui;bundle-version="3.109.0",
+ org.palladiosimulator.editors.commons.dialogs;bundle-version="2.1.1",
+ org.palladiosimulator.pcm.dataspec;bundle-version="0.1.0"

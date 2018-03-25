@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Assembly Dataflow Editor" version="12.0.0.2017041100">
+  <ownedViewpoints name="Assembly Dataflow Extension" modelFileExtension="system">
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Assembly Dataflow Diagram" viewpointURI="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly" representationName="Assembly Diagram">
+      <metamodel href="http://www.palladiosimulator.org/pcm/dataspec/assembly/0.1/#/"/>
+      <layers name="Dataflow">
+        <edgeMappings name="DataFlow" preconditionExpression="aql:sourceView!=targetView and source.portSpecification.outboundDataType==target.portSpecification.inboundDataType" semanticCandidatesExpression="aql:self.connectors__ComposedStructure" sourceMapping="//@ownedViewpoints[name='Assembly%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Assembly%20Dataflow%20Diagram']/@layers[name='Dataflow']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='DataPort%20Node'] //@ownedViewpoints[name='Assembly%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Assembly%20Dataflow%20Diagram']/@layers[name='Dataflow']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalDataPort%20Node']" targetMapping="//@ownedViewpoints[name='Assembly%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Assembly%20Dataflow%20Diagram']/@layers[name='Dataflow']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='DataPort%20Node'] //@ownedViewpoints[name='Assembly%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Assembly%20Dataflow%20Diagram']/@layers[name='Dataflow']/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalDataPort%20Node']" targetFinderExpression="aql:self.connectedPorts -> select (x | x.portSpecification.inboundDataType!=null)" sourceFinderExpression="aql:self.connectedPorts -> select (x | x.portSpecification.outboundDataType!=null)" domainClass="assembly::DataFlow" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="tree">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </edgeMappings>
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="ComposedProvidingRequiringEntity Node" semanticCandidatesExpression="var:self" domainClass="entity::ComposedProvidingRequiringEntity">
+          <borderedNodeMappings name="ExternalDataPort Node" semanticCandidatesExpression="aql:self.providedRoles_InterfaceProvidingEntity" domainClass="repository::DataPort">
+            <conditionnalStyles predicateExpression="aql:self.portSpecification.outboundDataType=null">
+              <style xsi:type="style:CustomStyleDescription" showIcon="false" labelExpression="feature:entityName" resizeKind="NSEW" id="org.palladiosimulator.editors.sirius.assembly.dataflow.extension.custom.dataPortInbound">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:self.portSpecification.inboundDataType=null">
+              <style xsi:type="style:CustomStyleDescription" showIcon="false" labelExpression="feature:entityName" resizeKind="NSEW" id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortOutbound">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="aql:(self.portSpecification.inboundDataType=null and self.portSpecification.outboundDataType=null)=false">
+              <style xsi:type="style:CustomStyleDescription" showIcon="false" labelExpression="feature:entityName" resizeKind="NSEW" id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortDouble">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </borderedNodeMappings>
+          <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalDataPort']"/>
+          <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalInfrastructureProvidedRole%20Node']"/>
+          <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalInfrastructureRequiredRole%20Node']"/>
+          <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalOperationProvidedRole%20Node']"/>
+          <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalOperationRequiredRole%20Node']"/>
+          <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalSinkRole%20Node']"/>
+          <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@borderedNodeMappings[name='ExternalSourceRole%20Node']"/>
+          <reusedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subNodeMappings[name='EventChannel%20Node']"/>
+          <reusedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subNodeMappings[name='StereotypeApplication%20Node']"/>
+          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="AssemblyContext Container" semanticCandidatesExpression="aql:self.assemblyContexts__ComposedStructure" domainClass="composition::AssemblyContext">
+            <borderedNodeMappings name="DataPort Node" semanticCandidatesExpression="aql:self.encapsulatedComponent__AssemblyContext.providedRoles_InterfaceProvidingEntity" domainClass="repository::DataPort">
+              <conditionnalStyles predicateExpression="aql:self.portSpecification.outboundDataType=null">
+                <style xsi:type="style:CustomStyleDescription" showIcon="false" labelExpression="feature:entityName" resizeKind="NSEW" id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortInbound">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:self.portSpecification.inboundDataType=null">
+                <style xsi:type="style:CustomStyleDescription" showIcon="false" labelExpression="feature:entityName" resizeKind="NSEW" id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortOutbound">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:(self.portSpecification.inboundDataType=null and self.portSpecification.outboundDataType=null)=false">
+                <style xsi:type="style:CustomStyleDescription" showIcon="false" labelExpression="feature:entityName" resizeKind="NSEW" id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortDouble">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                </style>
+              </conditionnalStyles>
+            </borderedNodeMappings>
+            <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='OperationProvidedRole%20Node']"/>
+            <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='OperationRequiredRole%20Node']"/>
+            <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='SinkRole%20Node']"/>
+            <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='SourceRole%20Node']"/>
+            <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='InfrastructureProvidedRole%20Node']"/>
+            <reusedBorderedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@borderedNodeMappings[name='InfrastructureRequiredRole%20Node']"/>
+            <reusedNodeMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@subNodeMappings[name='StereotypeApplication%20Node']"/>
+            <reusedContainerMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@subContainerMappings[name='VariableUsage%20Container']"/>
+            <reusedContainerMappings href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']/@subContainerMappings[name='Role%20Container']"/>
+            <importedMapping href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']/@subContainerMappings[name='AssemblyContext%20Container']"/>
+          </subContainerMappings>
+          <importedMapping href="viewpoint:/org.palladiosimulator.editors.sirius.assembly/Assembly#//@ownedViewpoints[name='Assembly']/@ownedRepresentations[name='Assembly%20Diagram']/@defaultLayer/@containerMappings[name='ComposedProvidingRequiringEntity%20Node']"/>
+        </containerMappings>
+        <toolSections name="Dataflow Elements">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="DataFlow" precondition="aql:preTarget.differs(preSource) and preTarget.portSpecification.inboundDataType == preSource.portSpecification.outboundDataType" edgeMappings="//@ownedViewpoints[name='Assembly%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Assembly%20Dataflow%20Diagram']/@layers[name='Dataflow']/@edgeMappings[name='DataFlow']" connectionStartPrecondition="aql:preSource.portSpecification.outboundDataType != null">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[sourceView.eContainer().eContainer(DDiagramElement).target/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="assembly::DataFlow" referenceName="connectors__ComposedStructure" variableName="connectors__ComposedStructure">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="newDataFlow"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="connectedPorts" valueExpression="aql:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="connectedPorts" valueExpression="aql:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="connectedAssemblies" valueExpression="[targetView.eContainer(DDiagramElement).target/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="connectedAssemblies" valueExpression="[sourceView.eContainer(DDiagramElement).target/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </layers>
+    </ownedRepresentationExtensions>
+    <ownedJavaExtensions qualifiedClassName="org.palladiosimulator.editors.sirius.assembly.dataflow.extension.Services"/>
+  </ownedViewpoints>
+</description:Group>

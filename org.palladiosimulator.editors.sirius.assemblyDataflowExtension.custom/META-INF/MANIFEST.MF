@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Assembly Dataflow Diagram Editor - Custom
+Bundle-SymbolicName: org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom;singleton:=true
+Bundle-Version: 4.1.0.qualifier
+Bundle-Vendor: palladiosimulator.org
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

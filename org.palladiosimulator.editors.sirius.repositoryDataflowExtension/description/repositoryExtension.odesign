@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Repository Dataflow Editor" version="12.0.0.2017041100">
+  <ownedViewpoints name="Repository Dataflow Extension" modelFileExtension="repository">
+    <ownedRepresentationExtensions xsi:type="description_1:DiagramExtensionDescription" name="Repository Dataflow Diagram" viewpointURI="viewpoint:/org.palladiosimulator.editors.sirius.repository/Repository" representationName="Repository Diagram">
+      <metamodel href="http://www.palladiosimulator.org/pcm/dataspec/repository/0.1/#/"/>
+      <layers name="Dataflow">
+        <edgeMappings name="DataPort" preconditionExpression="aql:self.oclIsTypeOf(repository::DataPort)" targetMapping="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@containerMappings[name='DataPortSpecification']" targetFinderExpression="feature:portSpecification" sourceFinderExpression="feature:providingEntity_ProvidedRole" domainClass="repository::DataPort" useDomainElement="true" reconnections="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@toolSections.0/@ownedTools[name='DataPort%20Target'] //@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@toolSections.0/@ownedTools[name='DataPort%20Source']">
+          <sourceMapping xsi:type="description_1:ContainerMapping" href="viewpoint:/org.palladiosimulator.editors.sirius.repository/Repository#//@ownedViewpoints[name='Repository']/@ownedRepresentations[name='Repository%20Diagram']/@defaultLayer/@containerMappings[name='BasicComponent']"/>
+          <sourceMapping xsi:type="description_1:ContainerMapping" href="viewpoint:/org.palladiosimulator.editors.sirius.repository/Repository#//@ownedViewpoints[name='Repository']/@ownedRepresentations[name='Repository%20Diagram']/@defaultLayer/@containerMappings[name='CompositeComponent']"/>
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="&lt;&lt;DataPort>>">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="InteractiveDataPort" targetMapping="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@containerMappings[name='DataPortSpecification']" targetFinderExpression="feature:portSpecification" sourceFinderExpression="feature:providingEntity_ProvidedRole" domainClass="repository::InteractiveDataPort" useDomainElement="true" reconnections="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@toolSections.0/@ownedTools[name='InteractiveDataPort%20Target']">
+          <sourceMapping xsi:type="description_1:ContainerMapping" href="viewpoint:/org.palladiosimulator.editors.sirius.repository/Repository#//@ownedViewpoints[name='Repository']/@ownedRepresentations[name='Repository%20Diagram']/@defaultLayer/@containerMappings[name='BasicComponent']"/>
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:'&lt;&lt;InteractiveDataPort>>' + '\n' + '->' + self.inboundDataTriggersControlFlow.describedService__SEFF.eContainer().entityName +  '.' + self.inboundDataTriggersControlFlow.describedService__SEFF.entityName">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="DataPortSpecification" deletionDescription="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@toolSections.0/@ownedTools[name='DataPortSpecification%20Deletion']" labelDirectEdit="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="feature:interfaces__Repository" domainClass="repository::DataPortSpecification" childrenPresentation="VerticalStack">
+          <subContainerMappings name="InboundCompartment" semanticCandidatesExpression="var:self" domainClass="repository::DataPortSpecification" childrenPresentation="List">
+            <subNodeMappings name="Inbound" semanticCandidatesExpression="feature:inboundDataType" domainClass="repository::DataType">
+              <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(repository::PrimitiveDataType)">
+                <style xsi:type="style:SquareDescription" labelExpression="aql:self.oclAsType(repository::PrimitiveDataType).type.toString().toLower()" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(entity::Entity)">
+                <style xsi:type="style:SquareDescription" labelExpression="aql:self.oclAsType(entity::Entity).entityName" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </conditionnalStyles>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Inbound">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="OutboundCompartment" semanticCandidatesExpression="var:self" domainClass="repository::DataPortSpecification" childrenPresentation="List">
+            <subNodeMappings name="Outbound" semanticCandidatesExpression="feature:outboundDataType" domainClass="repository::DataType">
+              <conditionnalStyles predicateExpression="aql:self.oclIsTypeOf(repository::PrimitiveDataType)">
+                <style xsi:type="style:SquareDescription" labelExpression="aql:self.oclAsType(repository::PrimitiveDataType).type.toString().toLower()" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </conditionnalStyles>
+              <conditionnalStyles predicateExpression="aql:self.oclIsKindOf(entity::Entity)">
+                <style xsi:type="style:SquareDescription" labelExpression="aql:self.oclAsType(entity::Entity).entityName" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </conditionnalStyles>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Outbound">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelExpression="aql: '&lt;&lt;DataPortSpecification>>\n'.concat(self.entityName)">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Dataflow Elements">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="DataPort" edgeMappings="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@edgeMappings[name='DataPort']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="repository::DataPort" referenceName="providedRoles_InterfaceProvidingEntity">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="portSpecification" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="aql:'DataPort_' + target.entityName  + '_' + source.entityName"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="DataPort Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="portSpecification" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="DataPort Source" reconnectionKind="RECONNECT_SOURCE">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="providingEntity_ProvidedRole" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="InteractiveDataPort" edgeMappings="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@edgeMappings[name='InteractiveDataPort']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="repository::InteractiveDataPort" referenceName="providedRoles_InterfaceProvidingEntity">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="portSpecification" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:ExternalJavaAction" name="Set InboundDataTriggersControlFlow" id="SetInboundDataTriggersControlFlow">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="aql:'InteractiveDataPort_' + target.entityName  + '_' + source.entityName + '.' + self.inboundDataTriggersControlFlow.describedService__SEFF.entityName"/>
+                    <parameters name="instance" value="var:instance"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="InteractiveDataPort Target">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="portSpecification" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditName" inputLabelExpression="feature:entityName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="DataPortSpecification" containerMappings="//@ownedViewpoints[name='Repository%20Dataflow%20Extension']/@ownedRepresentationExtensions[name='Repository%20Dataflow%20Diagram']/@layers[name='Dataflow']/@containerMappings[name='DataPortSpecification']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="repository::DataPortSpecification" referenceName="interfaces__Repository">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="entityName" valueExpression="aql:'DataPortSpecification' + container.eAllContents()->filter(repository::DataPortSpecification)->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="DataPortSpecification Deletion">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:For" expression="aql:self.eContainer().eAllContents() -> filter(repository::DataPort)">
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:i.oclAsType(repository::DataPort).portSpecification = element">
+                    <subModelOperations xsi:type="tool_1:RemoveElement"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:RemoveElement"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </layers>
+    </ownedRepresentationExtensions>
+    <ownedJavaExtensions qualifiedClassName="org.palladiosimulator.editors.sirius.repository.dataflow.extension.Services"/>
+  </ownedViewpoints>
+</description:Group>

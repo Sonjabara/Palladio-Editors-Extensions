@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	 <extension
+	        id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortOutbound"
+	        point="org.palladiosimulator.editors.sirius.custom.style.rotatableNode">
+	     <image
+	           bottom="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-outbound-bottom.svg"
+	           id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortOutbound"
+	           left="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-outbound-left.svg"
+	           right="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-outbound-right.svg"
+	           top="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-outbound-top.svg">
+	     </image>
+	  </extension>
+	  <extension
+	        id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortInbound"
+	        point="org.palladiosimulator.editors.sirius.custom.style.rotatableNode">
+	     <image
+	           bottom="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-inbound-bottom.svg"
+	           id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortInbound"
+	           left="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-inbound-left.svg"
+	           right="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-inbound-right.svg"
+	           top="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-inbound-top.svg">
+	     </image>
+	  </extension>
+	  <extension
+	        id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortDouble"
+	        point="org.palladiosimulator.editors.sirius.custom.style.rotatableNode">
+	     <image
+	           bottom="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-double-bottom.svg"
+	           id="org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom.dataPortDouble"
+	           left="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-double-left.svg"
+	           right="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-double-right.svg"
+	           top="/org.palladiosimulator.editors.sirius.assemblyDataflowExtension.custom/images/dataport-double-top.svg">
+	     </image>
+	  </extension>
+</plugin>
